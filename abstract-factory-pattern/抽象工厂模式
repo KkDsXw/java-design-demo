@@ -1,0 +1,14 @@
+抽象工厂模式---这个模式看着有点绕，特详细注解
+1、base包
+Human接口定义人的基础接口，抽象类实现黑，白，黄，3个人种共有的方法，其他性别具体实现不同，其他方法实现相同
+2、pojo包
+为具体的类，实现差异性的方法 sex
+3、constant包
+存放枚举，无特殊
+4、factory包，核心，也是难点
+HumanFactory顶层接口创建黑白黄三个人种，不关心内部差异性的接口实现
+AbstractHumanFactory 【核心类】 提供一个公共创建对象的方法给子类使用，不实现HumanFactory接口
+具体工厂为男性工厂和女性工厂ManHumanFactory和WomanHumanFactory实现HumanFactory接口，调用AbstractHumanFactory方法创建对象
+
+特点：
+功能上，高内聚低耦合，易扩展，满足开闭原则 OPC
